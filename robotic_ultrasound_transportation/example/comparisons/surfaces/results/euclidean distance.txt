@@ -1,0 +1,17 @@
+\begin{tabularx}{\linewidth}{|c|X|X|X|X|X|X|}
+\hline
+ & Column 1 & Column 2 & Column 3 & Column 4 & Column 5 & Column 6 \\
+\hline
+Row 1 & 0.00 & 2.99 & 9.57 & 9.36 & 19.23 & 1.75 \\
+\hline
+Row 2 & 2.99 & 0.00 & 7.07 & 7.08 & 17.70 & 2.03 \\
+\hline
+Row 3 & 9.57 & 7.07 & 0.00 & 6.28 & 15.53 & 8.66 \\
+\hline
+Row 4 & 9.36 & 7.08 & 6.28 & 0.00 & 15.80 & 8.06 \\
+\hline
+Row 5 & 19.23 & 17.70 & 15.53 & 15.80 & 0.00 & 18.66 \\
+\hline
+Row 6 & 1.75 & 2.03 & 8.66 & 8.06 & 18.66 & 0.00 \\
+\hline
+\end{tabularx}

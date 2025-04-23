@@ -1,0 +1,23 @@
+Component,Rigid (ms),Generalization (ms),Non-Rigid (ms)
+RS/2D Object Detection,3.778557017161312,5.619967705284798,0.0
+RS/Bounding Box-based Point Cloud Filtering,590.1334449399947,683.1453236408092,0.0
+RS/Frame Extraction,14.495568845694029,10.911105334127381,0.0
+RS/Point Cloud Transformation/Alignment,333.242179457161,385.489264584088,0.0
+RS_mediapipe/Frame Extraction,0.0,0.0,8.517537772461448
+RS_mediapipe/Keypoint Extraction,0.0,0.0,46.09544770784284
+RS_mediapipe/PCD Publishing,0.0,0.0,0.2608540740989079
+RS_mediapipe/Point Cloud Generation,0.0,0.0,0.25635889524156147
+RS_mediapipe/Point Cloud Transformation/Alignment,0.0,0.0,0.08083621944123855
+PCD_rigid/Coarse Alignment,797.25356636371,0.0,0.0
+PCD_rigid/Downsampling & Chamfer Distance,10.108309847340777,0.0,0.0
+PCD_rigid/ICP Fine Alignment,6.548751000133737,0.0,0.0
+PCD_rigid/PCD Message Handling & Preprocessing,269.8237203358335,0.0,0.0
+PCD_rigid/Reordering Point Clouds,7.230169272547264,0.0,0.0
+PCD_dynamic/CPD Registration,0.0,34004.279349944445,0.0
+PCD_dynamic/Downsampling & Chamfer Distance,0.0,6435.06355292595,0.0
+PCD_dynamic/ICP Fine Alignment,0.0,13.866110555555657,0.0
+PCD_dynamic/PCD Message Handling & Preprocessing,0.0,0.0012639922206006957,0.0019394629234893265
+PCD_dynamic/Reordering Point Clouds,0.0,11.121146499893497,0.0
+PCD_keypoints/Keypoints entire pipeline,0.0,0.0,0.3746565293620412
+LTE/Fitting,206.978090636188,421.8723920000558,383.48530664704333
+LTE/Trajectory Update,33.0623991818583,40.853539944514935,31.416353823514577

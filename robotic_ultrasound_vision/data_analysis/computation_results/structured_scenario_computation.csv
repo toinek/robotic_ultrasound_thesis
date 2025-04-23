@@ -1,0 +1,4 @@
+Component,Rigid (ms),Generalization (ms),Non-Rigid (ms),Mean Count Rigid,Mean Count Generalization,Mean Count Non-Rigid
+Image Processing,4715.682016114517,3758.9517263815446,165.85010074204394,350.0,2538.5,3205.8
+Point Cloud Registration,5151.381167361642,150759.72056784178,1.1363683397006843,59.0,119.0,480.5
+LTE-Based Trajectory Adaptation,1213.0563706656396,1819.5998732512442,1280.8085330951767,11.0,18.0,17.0

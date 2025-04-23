@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: gaussian_process
+Version: 0.1.0
+Summary: Gaussian Process Transportation
+Author: Giovanni Franzese
+Author-email: g.franzese@tudelft.nl
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pynput
+Requires-Dist: rospy
+Requires-Dist: scikit_learn==1.3.1
+Requires-Dist: scipy
+Requires-Dist: sensor_msgs

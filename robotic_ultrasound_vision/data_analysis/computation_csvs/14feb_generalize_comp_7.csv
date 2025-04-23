@@ -1,0 +1,12 @@
+Component,mean,std,count
+LTE/Fitting,0.475516116000108,,1
+LTE/Trajectory Update,0.0370040980005796,,1
+PCD_dynamic/CPD Registration,29.93156890400041,,1
+PCD_dynamic/Downsampling & Chamfer Distance,10.673538363000262,,1
+PCD_dynamic/ICP Fine Alignment,0.0055743599996276,,1
+PCD_dynamic/PCD Message Handling & Preprocessing,9.077646823510911e-07,3.22633809833252e-07,17
+PCD_dynamic/Reordering Point Clouds,0.0037735149999207,,1
+RS/2D Object Detection,0.005380959756526496,0.0026864604311705787,115
+RS/Bounding Box-based Point Cloud Filtering,0.486293303293137,0.22515096339059018,116
+RS/Frame Extraction,0.006019428486947764,0.002715290127856368,115
+RS/Point Cloud Transformation/Alignment,0.3216200060603099,0.1162203676634951,116
