@@ -37,7 +37,7 @@ Follow these steps to set up the project in a catkin workspace:
    **Important**: Do **not** run `export CXXFLAGS="-march=native -faligned-new"`, as the SIMD patch disables `-march=native` to prevent segmentation faults.
 
 3. **Install iiwa_ros Dependencies**  
-   Install the dependencies for the `[iiwa_ros](https://github.com/epfl-lasa/iiwa_ros)` package, excluding the `kuka-fri` repository (already installed). Clone the `iiwa_ros` repository:
+   Install the dependencies for the [iiwa_ros](https://github.com/epfl-lasa/iiwa_ros) package, excluding the `kuka-fri` repository (already installed). Clone the `iiwa_ros` repository:
    ```bash
    cd src
    git clone https://github.com/epfl-lasa/iiwa_ros.git
