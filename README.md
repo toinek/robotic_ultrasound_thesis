@@ -1,67 +1,23 @@
-# robotic_ultrasound_thesis
-Robotic Ultrasound Project
-Overview
-This repository contains the source code and configurations for the robotic ultrasound system developed as part of a Master's thesis at Delft University of Technology. The project integrates various ROS packages to facilitate robotic control, vision processing, and impedance control for ultrasound-guided procedures.
-
-Table of Contents
-Project Structure
-
-Installation Instructions
-
-Usage
-
-External Dependencies
-
-License
-
-Project Structure
-The repository follows a standard ROS workspace layout:
-
-css
-Kopiëren
-Bewerken
-robotic_ultrasound_project/
-├── src/
-│   ├── robotic_ultrasound_transportation/
-│   ├── robotic_ultrasound_vision/
-│   └── ...
-├── CMakeLists.txt
-└── package.xml
-robotic_ultrasound_transportation: Handles the transportation logic and interfaces with the robotic arm.
-
-robotic_ultrasound_vision: Manages vision processing tasks, including image acquisition and processing.
-
-Additional ROS packages as required for the project.
-
-The iiwa_impedance_control package is maintained separately in its own repository, as detailed in the External Dependencies section.
-
-Installation Instructions
+Robotic Ultrasound Thesis Project
+This repository contains the code and setup instructions for the robotic ultrasound thesis project, utilizing a KUKA robot with the iiwa_ros package, impedance control, and RealSense SDK for advanced robotic manipulation and sensing.
 Prerequisites
-ROS Noetic
 
-Catkin workspace setup
+ROS: Ensure ROS (Robot Operating System) is installed (preferably ROS Noetic or compatible version).
+Catkin Workspace: A catkin workspace is required to build the project.
+RealSense SDK 2.0: Install the RealSense SDK by following the official installation instructions.
+Git: Required for cloning repositories.
+Dependencies: Ensure all dependencies for iiwa_ros and other packages are installed.
 
-Steps
-Clone the repository:
+Setup Instructions
+Follow these steps to set up the project in a catkin workspace:
 
-bash
-Kopiëren
-Bewerken
-cd ~/catkin_ws/src
-git clone https://github.com/toinek/robotic_ultrasound_project.git
-Install external dependencies:
+Create a Catkin WorkspaceCreate and navigate to a catkin workspace, then create a src folder:
+mkdir <WORKSPACE_NAME> && cd <WORKSPACE_NAME>
+mkdir src
 
-RealSense SDK 2.0:
 
-Follow the installation instructions provided by Intel for the RealSense SDK 2.0.
-
-KUKA FRI:
-
-bash
-Kopiëren
-Bewerken
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
+Install the KUKA FRI RepositoryClone the KUKA FRI repository and apply a SIMD patch to disable -march=native:
+cd src
 git clone git@gitlab.tudelft.nl:nickymol/kuka_fri.git
 cd kuka_fri
 wget https://gist.githubusercontent.com/matthias-mayr/0f947982474c1865aab825bd084e7a92/raw/244f1193bd30051ae625c8f29ed241855a59ee38/0001-Config-Disables-SIMD-march-native-by-default.patch
@@ -69,56 +25,53 @@ git am 0001-Config-Disables-SIMD-march-native-by-default.patch
 ./waf configure
 ./waf
 sudo ./waf install
-iiwa_ros:
 
-bash
-Kopiëren
-Bewerken
-cd ~/catkin_ws/src
+Important: Do not run export CXXFLAGS="-march=native -faligned-new", as the SIMD patch disables -march=native to prevent segmentation faults.
+
+Install iiwa_ros DependenciesInstall the dependencies for the iiwa_ros package, excluding the kuka-fri repository (already installed). Clone the iiwa_ros repository:
+cd src
 git clone https://github.com/epfl-lasa/iiwa_ros.git
-realsense-ros:
 
-bash
-Kopiëren
-Bewerken
-cd ~/catkin_ws/src
-git clone git@github.com:IntelRealSense/realsense-ros.git
-Build the workspace:
 
-bash
-Kopiëren
-Bewerken
-cd ~/catkin_ws
+Install Impedance ControllerClone the impedance control repository and checkout the spline_trajectory branch, which removes the need for a specific end-effector:
+git clone git@gitlab.tudelft.nl:nickymol/iiwa_impedance_control.git
+cd iiwa_impedance_control
+git checkout spline_trajectory
+
+
+Clone the Thesis RepositoryClone the main thesis project repository:
+git clone git@github.com:toinek/robotic_ultrasound_thesis.git
+
+
+Build the WorkspaceNavigate to the root of the catkin workspace and build:
+cd <WORKSPACE_NAME>
 catkin_make
-Usage
-Source the workspace:
 
-bash
-Kopiëren
-Bewerken
+
+Source the WorkspaceSource the workspace to make the packages available:
 source devel/setup.bash
-Launch the desired ROS nodes:
 
-For example, to launch the vision processing node:
 
-bash
-Kopiëren
-Bewerken
-roslaunch robotic_ultrasound_vision vision_node.launch
-Replace vision_node.launch with the appropriate launch file for other functionalities.
 
-External Dependencies
-This project relies on several external repositories:
+Usage
 
-RealSense SDK 2.0: For depth sensing and camera integration.
+Ensure the RealSense camera is connected and properly configured.
+Run the necessary ROS nodes from the iiwa_ros and robotic_ultrasound_thesis packages.
+Use the impedance controller for tasks requiring compliant motion, leveraging the spline_trajectory branch for trajectory planning.
+Refer to the robotic_ultrasound_thesis repository for specific scripts and configurations tailored to ultrasound tasks.
 
-KUKA FRI: For communication with the KUKA robot.
+Notes
 
-iiwa_ros: For interfacing with the KUKA iiwa robot.
-
-realsense-ros: For RealSense camera integration in ROS.
-
-Please refer to the respective repositories for detailed installation and setup instructions.
+The spline_trajectory branch in iiwa_impedance_control is specifically modified to eliminate the dependency on a particular end-effector, making it more flexible for various setups.
+If you encounter segmentation faults, double-check that -march=native is not enabled in any build configurations.
+For detailed documentation on the KUKA robot or impedance control, refer to the respective repositories (kuka_fri, iiwa_ros, iiwa_impedance_control).
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
+Acknowledgments
+
+KUKA FRI Repository
+iiwa_ros Package
+Impedance Control Repository
+Intel RealSense SDK Team
+
